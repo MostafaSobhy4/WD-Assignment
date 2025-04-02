@@ -5,58 +5,71 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>School Task Assignment</title>
     <link rel="icon" type="jpg/png" href="imgs/logo.png" > 
-    <link rel="stylesheet" href="Css/School Task.css">
+    <link rel="stylesheet" href="Css/signup.css">
     <link rel="stylesheet" href="Css/normalize.css">
     <link rel="stylesheet" href="Css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&family=Jomhuria&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <script src="script.js" defer></script>
-</head>
 
 <body>
-    <div class="logo">
-        <a href="">
-            <i class="fa-solid fa-school"></i>
-            <h3>School Task</h3>
-        </a>
-    </div>
-
-    <h1>Welcome to School Task Page</h1>
-    <div class="signup">
-        <h2>Sign Up</h2>
-        <div class="social">
-            <a href=""><i class="fa-brands fa-facebook"></i></a>
-            <a href=""><i class="fa-brands fa-google"></i></a>
+    <div class="signup-page">
+        <div class="left">
+            <div class="logo">
+                <a href="">
+                    <i class="fa-solid fa-school"></i>
+                    <h3>School Task</h3>
+                </a>
+            </div>
+        
+            <h1>Welcome to School Task Page</h1>
+            <div class="signup">
+                <h2>Sign Up</h2>
+                <div class="social">
+                    <a href=""><i class="fa-brands fa-facebook"></i></a>
+                    <a href=""><i class="fa-brands fa-google"></i></a>
+                </div>
+            
+                <p>or</p>
+            
+                <form action="" id="signup-form">
+                    <label for="username">Username:</label>
+                    <input type="text" id="username" placeholder="User Name" name="username" required>
+                    <br>
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" placeholder="Email Address" name="email" required>
+                    <br>
+                    <label for="password">Password:</label>
+                    <div class="password-field">
+                        <input type="password" id="signup-pass" name="signup-pass" placeholder="Password" required>
+                        <i class="fa-solid fa-eye" id="toggle-password"></i>
+                    </div>
+                    <br>
+                    <label for="password">Confirm Password:</label>
+                    <div class="password-field">
+                        <input type="password" id="signup-pass" name="signup-pass" placeholder="Password" required>
+                        <i class="fa-solid fa-eye" id="toggle-password"></i>
+                    </div>
+                    <br>
+                    <label for="role">Role:</label>
+                    <select id="role" name="role">
+                        <option value="admin">Admin</option>
+                        <option value="teacher">Teacher</option>
+                    </select>
+                    <br>
+                    <button type="submit">Sign Up</button>
+                </form>
+                <p>Already have an account? <a href="login.html">Login</a></p>
+            </div>
         </div>
-    
-        <p>or</p>
-    
-        <form action="" id="signup-form">
-            <label for="username">Username:</label>
-            <input type="text" id="username" placeholder="User Name" name="username" required>
-            <br>
-            <label for="email">Email:</label>
-            <input type="email" id="email" placeholder="Email Address" name="email" required>
-            <br>
-            <label for="password">Password:</label>
-            <input type="password" id="password" placeholder="Password" name="pass" required>
-            <br>
-            <label for="password">Confirm Password:</label>
-            <input type="password" id="confirm-password"  placeholder="Confirm Password" name="confirm-pass" required>
-            <br>
-            <label for="role">Role:</label>
-            <select id="role" name="role">
-                <option value="admin">Admin</option>
-                <option value="teacher">Teacher</option>
-            </select>
-            <br>
-            <button type="submit">Sign Up</button>
-        </form>
-        <p>Already have an account? <a href="login.html">Login</a></p>
-    </div>
 
-    <div class="wallpeper">
-        <img src="imgs/wallpaper.jpg" alt="">
+        <div class="right">
+            <div class="wallpeper">
+                <img src="imgs/wallpaper.jpg" alt="">
+            </div>
+        </div>
+
     </div>
 </body>
 </html>
