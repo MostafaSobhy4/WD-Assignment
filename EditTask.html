@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Task | School Task Manager</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <div class="navbar">
+        <a href="Admin.html">Dashboard</a>
+        <a href="Add-Task.html">Add Task</a>
+        <div class="navbar-right">
+            <a href="#">Welcome, Admin</a>
+            <a href="#">Logout</a>
+        </div>
+    </div>
+    
+    <!-- Main Content -->
+    <div class="container">
+        <h1>Edit Task</h1>
+        <p>Update task details</p>
+        
+        <div class="form-container">
+            <form action="Admin.html">
+                <div class="form-group">
+                    <label for="taskTitle">Task Title</label>
+                    <input type="text" id="taskTitle" class="form-control" value="Prepare lesson plan for week 5" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="teacherName">Teacher</label>
+                    <select id="teacherName" class="form-control" required>
+                        <option value="Mr. Ahmed" selected>Mr. Ahmed</option>
+                        <option value="Ms. Fatma">Ms. Fatma</option>
+                        <option value="Mr. Mohamed">Mr. Mohamed</option>
+                        <option value="Ms. Aisha">Ms. Aisha</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="priority">Priority</label>
+                    <select id="priority" class="form-control" required>
+                        <option value="high" selected>High</option>
+                        <option value="medium">Medium</option>
+                        <option value="low">Low</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="description">Description</label>
+                    <textarea id="description" class="form-control" rows="5" required>Create a detailed lesson plan for week 5 covering chapters 3-5 with activities and assessments.</textarea>
+                </div>
+                
+                <button type="submit" class="btn btn-submit">Update Task</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
