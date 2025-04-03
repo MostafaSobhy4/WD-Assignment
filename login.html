@@ -3,39 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>School Task Assignment</title>
+    <title>Login</title>
     <link rel="icon" type="jpg/png" href="imgs/logo.png" > 
-    <link rel="stylesheet" href="Css/login.css">
+    <link rel="stylesheet" href="Css/styles.css">
     <link rel="stylesheet" href="Css/normalize.css">
     <link rel="stylesheet" href="Css/all.min.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&family=Jomhuria&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <script src="script.js" defer></script>
 </head>
 
 <body>
-    <div class="login-page">
+    <div class="navbar">
         <div class="logo">
             <a href="">
                 <i class="fa-solid fa-school"></i>
-                <h3>School Task</h3>
+                School Task
             </a>
         </div>
-        <h2>Login </h2>
-        <form id="login-form">
-            <label for="log-username">Username:</label>
-            <input type="text" id="log-username" name="log-username" placeholder="User Name" required>
-            <br>
-            <label for="log-password">Password:</label>
-            <div class="password-field">
-                <input type="password" id="log-password" name="log-password" placeholder="Password" required>
-                <i class="fa-solid fa-eye" id="toggle-password"></i>
-            </div>
-            <br>
-            <button type="submit">Login</button>
-        </form>
-        <p>You don't have an account? <a href="signup.html">Sign up</a></p>
+    </div>
+    <div class="container">
+        <div class="login-page">
+            <h2>Login </h2>
+            <form id="login-form">
+                <label for="log-username">Username:</label>
+                <input type="text" id="log-username" name="log-username" placeholder="User Name" required>
+                <br>
+                <label for="log-password">Password:</label>
+                <div class="password-field">
+                    <input type="password" id="log-password" name="log-password" placeholder="Password" required>
+                    <i class="fa-solid fa-eye" id="toggle-password"></i>
+                </div>
+                <br>
+                <button type="submit">Login</button>
+            </form>
+            <p>You don't have an account? <a href="signup.html">Sign up</a></p>
+        </div>
     </div>
 </body>
 </html>
