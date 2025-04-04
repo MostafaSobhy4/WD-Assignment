@@ -16,7 +16,7 @@ body {
     background-color: #2c3e50;
     overflow: hidden;
     padding: 0 20px;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
 .navbar a {
@@ -38,43 +38,46 @@ body {
 }
 
 /* Home Styles */
-.home{
+.home {
     color: white;
     padding: 15px 20px;
     text-decoration: none;
     font-size: 30px;
     border-radius: 4px;
     text-align: center;
-    
+
 }
+
 .home a {
-    text-decoration: none; 
-    color: #231d42; 
+    text-decoration: none;
+    color: #231d42;
 }
+
 .home img {
     width: 150px;
     height: auto;
-    margin-bottom: 10px; 
+    margin-bottom: 10px;
 }
 
 
 .home p {
-    
+
     font-size: 16px;
     color: rgb(0, 0, 0);
     font-weight: 600;
     border-radius: 4px;
 }
 
-.buttons{
+.buttons {
     align-items: center;
     padding: 15px 20px;
     text-align: center;
-    
+
 }
+
 .buttons a {
-    text-decoration: none; 
-    color: #ffffff; 
+    text-decoration: none;
+    color: #ffffff;
     font-size: 22px;
     font-weight: 600;
     border-radius: 4px;
@@ -89,13 +92,12 @@ body {
 }
 
 
-
 /* Task List Styles */
 .task-list {
     background: white;
     padding: 25px;
     border-radius: 8px;
-    box-shadow: 0 2px 15px rgba(0,0,0,0.05);
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
     margin-top: 25px;
 }
 
@@ -137,7 +139,7 @@ tr:hover {
 
 .btn:hover {
     transform: translateY(-2px);
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .btn-edit {
@@ -214,7 +216,7 @@ tr:hover {
     background: white;
     padding: 30px;
     border-radius: 8px;
-    box-shadow: 0 2px 15px rgba(0,0,0,0.05);
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
     max-width: 600px;
     margin: 20px auto;
 }
@@ -272,7 +274,7 @@ select.form-control {
     background: white;
     padding: 30px;
     border-radius: 8px;
-    box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
     max-width: 500px;
     margin: 20px auto;
     text-align: center;
@@ -301,11 +303,11 @@ select.form-control {
         padding: 12px 10px;
         font-size: 14px;
     }
-    
+
     .container {
         padding: 15px;
     }
-    
+
     th, td {
         padding: 8px 10px;
         font-size: 14px;
@@ -328,11 +330,11 @@ select.form-control {
 }
 
 .login-page h2 {
-    margin: 30px 0px 15px 0px;
+    margin: 30px 0 15px 0;
     font-size: 29px;
 }
 
-.login-page p:last-of-type { 
+.login-page p:last-of-type {
     margin-top: 15px;
     color: gray;
 }
@@ -352,7 +354,6 @@ form {
     display: flex;
     flex-direction: column;
 }
-
 
 
 .password-field {
@@ -407,7 +408,7 @@ button:hover {
 
 .left {
     width: 50%;
-    padding: 0px 50px;
+    padding: 0 50px;
 }
 
 
