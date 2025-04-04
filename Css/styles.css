@@ -376,18 +376,8 @@ form {
     color: black;
 }
 
-button {
-    margin-top: 15px;
-    padding: 10px;
-    background: black;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
 button:hover {
-    background: #333;
+    background: #413f93;
 }
 
 
@@ -512,15 +502,12 @@ input, select {
 button {
     margin-top: 15px;
     padding: 10px;
-    background: black;
+    background: #2c3e50;
     color: white;
     border: none;
     border-radius: 5px;
     cursor: pointer;
-}
-
-button:hover {
-    background: #333;
+    transition: background-color 0.3s;
 }
 
 .right {
