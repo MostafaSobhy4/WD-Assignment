@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link rel="stylesheet" href="Css/all.min.css">
+        <link rel="stylesheet" href="Css/normalize.css">
+        <link rel="stylesheet" href="Css/styles.css">
+    </head>
+    <body>
+        <!-- Navigation Bar Teacher -->
+    <div class="navbar">
+        <a href="Home.html">
+            <i class="fa-solid fa-school"></i>
+            School Task
+        </a>
+        <a href="Home.html">Home</a>
+        <a href="teacher_dashboard.html">Dashboard</a>
+        <a href="View_assigned_tasks.html">View tasks</a>
+        <a href="completed_tasks.html">Completed tasks</a>
+        
+        <div class="navbar-right">
+            <a href="#">Welcome, Teacher</a>
+            <a href="login.html">Logout</a>
+        </div>
+    </div>
+
+    <div class="container">
+        <h1>Assigned Tasks</h1>
+        <p>Here are your current assigned tasks. Click "Details" to view more information.</p>
+
+        <div class="task-list">
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Task Title</th>
+                        <th>Priority</th>
+                        <th>Status</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>Prepare lesson plan for week 5</td>
+                        <td><span class="priority priority-high">High</span></td>
+                        <td><span class="status status-pending">Pending</span></td>
+                        <td>
+                            <a href="details_task.html" class="btn btn-details">Details</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>Submit student progress reports</td>
+                        <td><span class="priority priority-medium">Medium</span></td>
+                        <td><span class="status status-pending">Pending</span></td>
+                        <td>
+                            <a href="details_task.html" class="btn btn-details">Details</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>Prepare exam questions</td>
+                        <td><span class="priority priority-low">Low</span></td>
+                        <td><span class="status status-pending">Pending</span></td>
+                        <td>
+                            <a href="details_task.html" class="btn btn-details">Details</a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    </body>
+</html>
