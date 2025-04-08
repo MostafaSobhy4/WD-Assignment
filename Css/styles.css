@@ -554,3 +554,94 @@ button {
 .wallpeper {
     height: 100%;
 }
+
+/* ######################################################################## completed_tasks.html */
+
+
+.task-box {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      padding: 12px;
+      margin-bottom: 15px;
+      border: 1px solid #ddd;
+      border-radius: 6px;
+      background-color: #f9f9f9;
+      position: relative;
+      transition: background-color 0.3s;
+      overflow: hidden;
+    }
+
+    .task-box:hover {
+      background-color: #f1f1f1;
+    }
+
+    .task-details {
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .task-title {
+      font-size: 1rem;
+      margin-bottom: 8px;
+      transition: text-decoration 0.3s;
+    }
+
+    .task-desc {
+      font-size: 0.9rem;
+      color: #666;
+      margin-top: 8px;
+      max-height: 0;
+      overflow: hidden;
+      opacity: 0;
+      transition: all 0.3s ease;
+    }
+
+    .task-box:hover .task-desc {
+      max-height: 200px;
+      opacity: 1;
+    }
+
+    .check-wrapper {
+      display: flex;
+      align-items: center;
+    }
+
+    .check-input {
+      appearance: none;
+      -webkit-appearance: none;
+      width: 35px;
+      height: 35px;
+      border: 2px solid #ccc;
+      border-radius: 5px;
+      cursor: pointer;
+      position: relative;
+      background-color: #f9f9f9;
+      transition: all 0.3s ease;
+    }
+
+    .check-input::before {
+      content: "☐";
+      font-size: 1.5rem;
+      color: #ccc;
+      position: absolute;
+      top: 2px;
+      left: 7px;
+      transition: all 0.3s ease;
+    }
+
+    .check-input:checked {
+      background-color: green;
+      border-color: green;
+    }
+
+    .check-input:checked::before {
+      content: "✔";
+      color: white;
+      left: 8px;
+    }
+
+    .check-input:checked ~ .task-details .task-title {
+      text-decoration: line-through;
+    }
