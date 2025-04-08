@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>View Tasks | School Task Manager</title>
+  <link rel="icon" type="jpg/png" href="imgs/logo.png" />
+  <link rel="stylesheet" href="Css/styles.css" />
+  <link rel="stylesheet" href="Css/normalize.css" />
+  <link rel="stylesheet" href="Css/all.min.css" />
+  <script defer>
+    function toggleTask(button) {
+      const taskItem = button.closest('.task-box');
+      const title = taskItem.querySelector('.task-title');
+      const isChecked = button.classList.contains('checked');
+
+      if (!isChecked) {
+        button.classList.add('checked');
+        button.innerHTML = '✔'; // Show checkmark
+        button.style.color = 'white'; // Make checkmark white
+        button.style.backgroundColor = 'green'; // Green background
+        title.style.textDecoration = 'line-through'; // Strike-through title
+      } else {
+        button.classList.remove('checked');
+        button.innerHTML = ''; // Remove checkmark
+        button.style.color = '#ccc'; // Reset color
+        button.style.backgroundColor = '#f9f9f9'; // Reset background
+        button.style.borderColor = '#ccc'; // Reset border
+        title.style.textDecoration = 'none'; // Remove strike-through title
+      }
+    }
+
+    function showDesc(taskBox) {
+      const desc = taskBox.querySelector('.task-desc');
+      desc.style.maxHeight = '1000px';
+      desc.style.opacity = 1;
+    }
+
+    function hideDesc(taskBox) {
+      const desc = taskBox.querySelector('.task-desc');
+      desc.style.maxHeight = '0';
+      desc.style.opacity = 0;
+    }
+  </script>
+</head>
+<body>
+
+<!-- Navigation Bar Teacher -->
+<div class="navbar">
+  <a href="Home.html">
+      <i class="fa-solid fa-school"></i>
+      School Task
+  </a>
+  <a href="Home.html">Home</a>
+  <a href="teacher_dashboard.html">Dashboard</a>
+  <a href="View_assigned_tasks.html">View tasks</a>
+  <a href="completed_tasks.html">Completed tasks</a>
+  <a href="teacher_tasks.html">Search Task</a>
+
+  <div class="navbar-right">
+      <a href="#">Welcome, Teacher</a>
+      <a href="login.html">Logout</a>
+  </div>
+</div>
+
+  <!-- Main Content -->
+  <div class="container">
+    <h1>View Tasks</h1>
+    <p>Select a task to view its description and mark it as completed.</p>
+
+    <div class="form-container">
+      <!-- Task List -->
+      <div class="task-box" onmouseover="showDesc(this)" onmouseout="hideDesc(this)">
+        <div class="task-details">
+          <span class="task-title">Prepare Lesson Plan</span>
+          <p class="task-desc">
+            <strong>Teacher:</strong> Mr. Ahmed<br>
+            <strong>Priority:</strong> High<br>
+            <strong>Description:</strong> Plan for week 5: chapters 3–5, include activities.
+          </p>
+        </div>
+        <button class="check-btn" onclick="toggleTask(this)">☐</button>
+      </div>
+
+      <div class="task-box" onmouseover="showDesc(this)" onmouseout="hideDesc(this)">
+        <div class="task-details">
+          <span class="task-title">Grade Quizzes</span>
+          <p class="task-desc">
+            <strong>Teacher:</strong> Ms. Fatma<br>
+            <strong>Priority:</strong> Medium<br>
+            <strong>Description:</strong> Grade all quizzes from section A and B.
+          </p>
+        </div>
+        <button class="check-btn" onclick="toggleTask(this)">☐</button>
+      </div>
+
+      <div class="task-box" onmouseover="showDesc(this)" onmouseout="hideDesc(this)">
+        <div class="task-details">
+          <span class="task-title">Upload Resources</span>
+          <p class="task-desc">
+            <strong>Teacher:</strong> Mr. Mohamed<br>
+            <strong>Priority:</strong> Low<br>
+            <strong>Description:</strong> Upload new PDF readings to the student portal.
+          </p>
+        </div>
+        <button class="check-btn" onclick="toggleTask(this)">☐</button>
+      </div>
+    </div>
+  </div>
+
+  <style>
+    .task-box {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      padding: 12px;
+      margin-bottom: 15px;
+      border: 1px solid #ddd;
+      border-radius: 6px;
+      background-color: #f9f9f9;
+      position: relative;
+      transition: background-color 0.3s;
+      overflow: hidden;
+    }
+
+    .task-box:hover {
+      background-color: #f1f1f1;
+    }
+
+    .task-details {
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .task-title {
+      font-size: 1rem;
+      margin-bottom: 8px;
+    }
+
+    .task-desc {
+      font-size: 0.9rem;
+      color: #666;
+      margin-top: 8px;
+      max-height: 0; /* Initially hidden */
+      overflow: hidden;
+      opacity: 0; /* Initially invisible */
+      transition: all 0.3s ease;
+    }
+
+    .check-btn {
+      font-size: 1.5rem;
+      background: none;
+      border: 2px solid #ccc;
+      border-radius: 5px;
+      cursor: pointer;
+      width: 35px;
+      height: 35px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #ccc;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    .check-btn:hover {
+      background-color: #f0f0f0;
+      color: #333;
+    }
+
+    .check-btn.checked {
+      background-color: green;
+      color: white;
+      border-color: green;
+    }
+
+    /* Smooth transition for description visibility */
+    .task-box:hover .task-desc {
+      max-height: 200px; /* Adjust max-height as needed */
+      opacity: 1;
+    }
+  </style>
+
+</body>
+</html>
