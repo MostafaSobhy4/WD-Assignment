@@ -645,3 +645,8 @@ button {
     .check-input:checked ~ .task-details .task-title {
       text-decoration: line-through;
     }
+.task_desc {
+    color: rgba(0, 0, 0, .7);
+    font-size: 14px;
+    display: block;
+}
