@@ -645,8 +645,9 @@ button {
     .check-input:checked ~ .task-details .task-title {
       text-decoration: line-through;
     }
+    
 .task_desc {
-    color: rgba(0, 0, 0, .7);
+    color: black;
     font-size: 14px;
     display: block;
 }
@@ -666,4 +667,15 @@ margin-left: 10px;
     background-color: darkgreen;
     color: white;
     padding: 15px;
+}
+.task_details_container {
+    text-align: center;
+    background-color: white;
+    padding: 30px;
+    margin: 50px auto;
+    width: 1000px;
+}
+.date {
+    display: flex;
+    justify-content: space-between;
 }
