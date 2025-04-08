@@ -650,3 +650,20 @@ button {
     font-size: 14px;
     display: block;
 }
+.actions_container {
+display: flex;
+align-items: center;
+justify-content: space-between;
+padding: 30px 0;
+width: 120px;
+margin-left: 10px;
+}
+
+.complete-tasks-btn {
+    margin: 20px auto;
+    display: block;
+    width: fit-content;
+    background-color: darkgreen;
+    color: white;
+    padding: 15px;
+}

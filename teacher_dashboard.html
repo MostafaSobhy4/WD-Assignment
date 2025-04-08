@@ -25,11 +25,9 @@
             </div>
         </div>
 
-        <div class="container">
-            <h1>Teacher Dashboard</h1>
-            <p>Mark the box to complete any task.</p>
-
-            <div class="task-list">
+        <div class="container" style="padding-top: 50px;">
+            <h1 style="margin: auto; width: fit-content;">Teacher Dashboard</h1>
+            <div class="task-list ">
                 <table>
                     <thead>
                         <tr>
@@ -60,8 +58,10 @@
                                     >Pending</span
                                 >
                             </td>
-                            <td>
-                                <input type="checkbox" style="width: 60px" />
+                            <td class="actions_container">
+                                <a class="btn btn-details" href="details_task.html">Details</a>
+                                <input type="checkbox"  style="width: 20px; height: 20px;"/>
+                               
                             </td>
                         </tr>
                         <tr>
@@ -84,8 +84,10 @@
                                     >Pending</span
                                 >
                             </td>
-                            <td>
-                                <input type="checkbox" style="width: 60px" />
+                            <td class="actions_container">
+                                <a class="btn btn-details"href="details_task.html">Details</a>
+                                <input type="checkbox"  style="width: 20px; height: 20px;"/>
+                                
                             </td>
                         </tr>
                         <tr>
@@ -106,12 +108,16 @@
                                     >Pending</span
                                 >
                             </td>
-                            <td>
-                                <input type="checkbox" style="width: 60px" />
+                            <td class="actions_container">
+                                <a class="btn btn-details" href="details_task.html">Details</a>
+                                <input type="checkbox"  style="width: 20px; height: 20px;"/>
                             </td>
                         </tr>
                     </tbody>
                 </table>
+
+                <a class="btn complete-tasks-btn" href="completed_tasks.html">Complete The Selected Tasks</a>
+
             </div>
         </div>
     </body>
