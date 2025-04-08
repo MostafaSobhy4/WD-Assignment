@@ -679,3 +679,6 @@ margin-left: 10px;
     display: flex;
     justify-content: space-between;
 }
+.check-input:hover {
+    cursor: default;
+}
