@@ -1,129 +1,125 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <link href="Css/all.min.css" rel="stylesheet" />
-        <link href="Css/normalize.css" rel="stylesheet" />
-        <link href="Css/styles.css" rel="stylesheet" />
-    </head>
+<head>
+    <link href="Css/all.min.css" rel="stylesheet"/>
+    <link href="Css/normalize.css" rel="stylesheet"/>
+    <link href="Css/styles.css" rel="stylesheet"/>
+</head>
 
-    <body>
-        <!-- Navigation Bar Teacher -->
-        <div class="navbar">
-            <a href="Home.html">
-                <i class="fa-solid fa-school"></i>
-                School Task
-            </a>
-            <a href="Home.html">Home</a>
-            <a href="teacher_dashboard.html">Dashboard</a>
-            <a href="View_assigned_tasks.html">View tasks</a>
-            <a href="completed_tasks.html">Completed tasks</a>
-            <a href="teacher_tasks.html">Search Task</a>
+<body>
+<!-- Navigation Bar Teacher -->
+<div class="navbar">
+    <a href="Home.html">
+        <i class="fa-solid fa-school"></i>
+        School Task
+    </a>
+    <a href="Home.html">Home</a>
+    <a href="teacher_dashboard.html">Dashboard</a>
+    <a href="View_assigned_tasks.html">View tasks</a>
+    <a href="completed_tasks.html">Completed tasks</a>
+    <a href="teacher_tasks.html">Search Task</a>
 
-            <div class="navbar-right">
-                <a href="#">Welcome, Teacher</a>
-                <a href="login.html">Logout</a>
-            </div>
-        </div>
+    <div class="navbar-right">
+        <a href="#">Welcome, Teacher</a>
+        <a href="login.html">Logout</a>
+    </div>
+</div>
 
-        <div class="container" style="padding-top: 50px;">
-            <h1 style="margin: auto; width: fit-content;">Teacher Dashboard</h1>
-            <div class="task-list ">
-                <table>
-                    <thead>
-                        <tr>
-                            <th>ID</th>
-                            <th>Task Title</th>
-                            <th>Priority</th>
-                            <th>Status</th>
-                            <th>Actions</th>
-                            <th>Complete</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>1</td>
-                            <td>
-                                Prepare lesson plan for week 5
-                                <!-- <span class="task_desc"
-                                    >Lorem ipsum dolor sit amet, consectetur
-                                    adipiscing elit, sed do eiusmod tempor
-                                    incididunt ut labore et dolore magna
-                                    aliqua.</span
-                                > -->
-                            </td>
-                            <td>
-                                <span class="priority priority-high">High</span>
-                            </td>
-                            <td>
+<div class="container" style="padding-top: 50px;">
+    <h1 style="margin: auto; width: fit-content;">Teacher Dashboard</h1>
+    <div class="task-list ">
+        <table>
+            <thead>
+            <tr>
+                <th>ID</th>
+                <th>Task Title</th>
+                <th>Priority</th>
+                <th>Status</th>
+                <th>Actions</th>
+                <th>Complete</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>1</td>
+                <td>
+                    Prepare lesson plan for week 5
+                    <!-- <span class="task_desc"
+                        >Lorem ipsum dolor sit amet, consectetur
+                        adipiscing elit, sed do eiusmod tempor
+                        incididunt ut labore et dolore magna
+                        aliqua.</span
+                    > -->
+                </td>
+                <td>
+                    <span class="priority priority-high">High</span>
+                </td>
+                <td>
                                 <span class="status status-pending"
-                                    >Pending</span
+                                >Pending</span
                                 >
-                            </td>
-                            <td >
-                                <a class="btn btn-details" href="details_task.html">Details</a>
-                            </td>
-                            <td>
-                                <input type="checkbox"  style="width: 20px; margin-left: 20px; height: 20px;"/>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>2</td>
-                            <td>Submit student progress reports
-                                <!-- <span class="task_desc"
-                                >Lorem ipsum dolor sit amet, consectetur
-                                adipiscing elit, sed do eiusmod tempor
-                                incididunt ut labore et dolore magna
-                                aliqua.</span
-                            > -->
-                            </td>
-                            <td>
+                </td>
+                <td>
+                    <a class="btn btn-details" href="details_task.html">Details</a>
+                </td>
+                <td>
+                    <input style="width: 20px; margin-left: 20px; height: 20px;" type="checkbox"/>
+                </td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Submit student progress reports
+                    <!-- <span class="task_desc"
+                    >Lorem ipsum dolor sit amet, consectetur
+                    adipiscing elit, sed do eiusmod tempor
+                    incididunt ut labore et dolore magna
+                    aliqua.</span
+                > -->
+                </td>
+                <td>
                                 <span class="priority priority-medium"
-                                    >Medium</span
+                                >Medium</span
                                 >
-                            </td>
-                            <td>
-                                <span class="status status-pending"
-                                    >Pending</span
-                                >
-                            </td>
-                            <td >
-                                <a class="btn btn-details" href="details_task.html">Details</a>
-                            </td>
-                            <td>
-                                <input type="checkbox"  style="width: 20px; margin-left: 20px; height: 20px;"/>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>3</td>
-                            <td>Prepare exam questions
-                                <!-- <span class="task_desc"
-                                >Lorem ipsum dolor sit amet, consectetur
-                                adipiscing elit, sed do eiusmod tempor
-                                incididunt ut labore et dolore magna
-                                aliqua.</span
-                            > -->
-                            </td>
-                            <td>
-                                <span class="priority priority-low">Low</span>
-                            </td>
-                            <td>
-                                <span class="status status-pending"
-                                    >Pending</span
-                                >
-                            </td>
-                            <td >
-                                <a class="btn btn-details" href="details_task.html">Details</a>
-                            </td>
-                            <td>
-                                <input type="checkbox"  style="width: 20px; margin-left: 20px; height: 20px;"/>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
+                </td>
+                <td>
+                    <span class="status status-completed">Completed</span>
+                </td>
+                <td>
+                    <a class="btn btn-details" href="details_task.html">Details</a>
+                </td>
+                <td>
+                    <input style="width: 20px; margin-left: 20px; height: 20px;" type="checkbox"/>
+                </td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>Prepare exam questions
+                    <!-- <span class="task_desc"
+                    >Lorem ipsum dolor sit amet, consectetur
+                    adipiscing elit, sed do eiusmod tempor
+                    incididunt ut labore et dolore magna
+                    aliqua.</span
+                > -->
+                </td>
+                <td>
+                    <span class="priority priority-low">Low</span>
+                </td>
+                <td>
+                    <span class="status status-pending">Pending</span>
+                </td>
+                <td>
+                    <a class="btn btn-details" href="details_task.html">Details</a>
+                </td>
+                <td>
+                    <input style="width: 20px; margin-left: 20px; height: 20px;" type="checkbox"/>
+                </td>
+            </tr>
+            </tbody>
+        </table>
 
-                <a class="btn complete-tasks-btn" href="completed_tasks.html">Complete The Selected Tasks</a>
+        <a class="btn complete-tasks-btn" href="completed_tasks.html">Complete The Selected Tasks</a>
 
-            </div>
-        </div>
-    </body>
+    </div>
+</div>
+</body>
 </html>
