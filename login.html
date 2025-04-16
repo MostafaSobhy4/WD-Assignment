@@ -38,6 +38,7 @@
                     <input type="password" id="log-password" name="log-password" placeholder="Password" required>
                     <i class="fa-solid fa-eye-slash" id="toggle-password"></i>
                 </div>
+                <span id="pass-msg" style="color: red;"></span>
                 <br>
                 <button type="submit">Login</button>
             </form>
@@ -69,6 +70,7 @@
         const storedUsername = localStorage.getItem("username");
         const storedPassword = localStorage.getItem("password");
         const storedRole = localStorage.getItem("role");
+        const message = document.getElementById("pass-msg");
 
         if (
             enteredUsername === storedUsername &&
@@ -79,11 +81,13 @@
 
             if (storedRole === "admin") {
                 window.location.href = "admin_dashboard.html";
-            } else if (storedRole === "teacher") {
+            } 
+            else if (storedRole === "teacher") {
                 window.location.href = "teacher_dashboard.html";
             }
-        } else {
-            alert("❌ Invalid username, password, or role.");
+        }
+        else {
+            message.textContent = "Invalid username, password, or role.";
         }
         });
     </script>

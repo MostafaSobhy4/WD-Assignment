@@ -105,9 +105,13 @@
             e.preventDefault();
             if (passwordInput.value !== confirmInput.value) {
                 message.textContent = "❌ Passwords do not match!";
-            } else {
+            } 
+            else if (passwordInput.value.length < 8 || confirmInput.value.length < 8) {
+                message.textContent = "The minimum allowed password length is 8.";
+            }
+            else {
                 message.textContent = "";
-                alert("✅ Signed up successfully! Redirecting to login...");
+                alert("✅ Signed up successfully!");
     
                 const username = document.getElementById("username").value;
                 const password = document.getElementById("signup-pass").value;
@@ -116,10 +120,13 @@
                 localStorage.setItem("username", username);
                 localStorage.setItem("password", password);
                 localStorage.setItem("role", role);
-    
-                setTimeout(() => {
-                    window.location.href = "login.html";
-                }, 500);
+
+                if (role === "admin") {
+                    window.location.href = "admin_dashboard.html";
+                } 
+                else if (role === "teacher") {
+                    window.location.href = "teacher_dashboard.html";
+                }
             }
         });
     </script>
