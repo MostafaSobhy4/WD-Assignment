@@ -17,12 +17,24 @@
             School Task
         </a>
         <a href="Home.html">Home</a>
-        <a href="Admin.html">Dashboard</a>
+        <a href="admin_dashboard.html">Dashboard</a>
         <a href="Add-Task.html">Add Task</a>
-        <div class="navbar-right">
-            <a href="#">Welcome, Admin</a>
+        <div class="navbar-right"> 
+            <p id="welcome-message"></p>
             <a href="login.html">Logout</a>
         </div>
+
+        <script>
+            const username = localStorage.getItem("username");
+
+            if (username) {
+                const welcomeMessage = document.getElementById("welcome-message");
+                welcomeMessage.textContent = `Welcome, ${username}!`;
+            } 
+            else {
+                window.location.href = "login.html";
+            }
+        </script>
     </div>
     
     <!-- Main Content -->
@@ -31,7 +43,7 @@
         <p>Update task details</p>
         
         <div class="form-container">
-            <form action="Admin.html">
+            <form action="admin_dashboard.html">
                 <div class="form-group">
                     <label for="taskTitle">Task Title</label>
                     <input type="text" id="taskTitle" class="form-control" value="Prepare lesson plan for week 5" required>

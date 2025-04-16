@@ -27,10 +27,16 @@
                 <label for="log-username">Username:</label>
                 <input type="text" id="log-username" name="log-username" placeholder="User Name" required>
                 <br>
+                <label for="role">Admin or Teacher?</label>
+                <select id="role" name="role">
+                    <option value="admin">Admin</option>
+                    <option value="teacher">Teacher</option>
+                </select>
+                <br>
                 <label for="log-password">Password:</label>
                 <div class="password-field">
                     <input type="password" id="log-password" name="log-password" placeholder="Password" required>
-                    <i class="fa-solid fa-eye" id="toggle-password"></i>
+                    <i class="fa-solid fa-eye-slash" id="toggle-password"></i>
                 </div>
                 <br>
                 <button type="submit">Login</button>
@@ -38,5 +44,48 @@
             <p>You don't have an account? <a href="signup.html">Sign up</a></p>
         </div>
     </div>
+
+    <script>
+        const togglePassword = document.getElementById("toggle-password");
+        const passwordInput = document.getElementById("log-password");
+      
+        togglePassword.addEventListener("click", () => {
+          const type = passwordInput.type === "password" ? "text" : "password";
+          passwordInput.type = type;
+          togglePassword.classList.toggle("fa-eye");
+          togglePassword.classList.toggle("fa-eye-slash");
+        });
+
+        const loginForm = document.getElementById("login-form");
+        const roleSelect = document.getElementById("role");
+
+        loginForm.addEventListener("submit", function (e) {
+        e.preventDefault();
+
+        const enteredUsername = document.getElementById("log-username").value;
+        const enteredPassword = document.getElementById("log-password").value;
+        const selectedRole = document.getElementById("role").value;
+
+        const storedUsername = localStorage.getItem("username");
+        const storedPassword = localStorage.getItem("password");
+        const storedRole = localStorage.getItem("role");
+
+        if (
+            enteredUsername === storedUsername &&
+            enteredPassword === storedPassword &&
+            selectedRole === storedRole
+        ) {
+            alert(`Welcome back, ${storedUsername}!`);
+
+            if (storedRole === "admin") {
+                window.location.href = "admin_dashboard.html";
+            } else if (storedRole === "teacher") {
+                window.location.href = "teacher_dashboard.html";
+            }
+        } else {
+            alert("❌ Invalid username, password, or role.");
+        }
+        });
+    </script>
 </body>
 </html>
