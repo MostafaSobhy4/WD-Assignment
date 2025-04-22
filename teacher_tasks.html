@@ -49,8 +49,9 @@
             <option value="high">High</option>
             <option value="medium">Medium</option>
             <option value="low">Low</option>
+            <option value="all">All</option>
         </select>
-        <button class="btn-search" type="submit">Search</button>
+        <button class="btn-search btn-search-js" type = "button">Search</button>
     </div>
 </form>
 <div class="task-list">
@@ -66,41 +67,12 @@
             <th>Actions</th>
         </tr>
         </thead>
-        <tbody>
-        <tr>
-            <td>1</td>
-            <td>Prepare lesson plan for week 5</td>
-            <td>Mr. Ahmed</td>
-            <td><span class="priority priority-high">High</span></td>
-            <td><span class="status status-pending">Pending</span></td>
-            <td>
-                <a class="btn btn-details" href="details_task.html">Details</a>
-            </td>
-        </tr>
-        <tr>
-            <td>2</td>
-            <td>Submit student progress reports</td>
-            <td>Ms. Fatma</td>
-            <td><span class="priority priority-medium">Medium</span></td>
-            <td><span class="status status-completed">Completed</span></td>
-            <td>
-                <a class="btn btn-details" href="details_task.html">Details</a>
-            </td>
-        </tr>
-        <tr>
-            <td>3</td>
-            <td>Prepare exam questions</td>
-            <td>Mr. Mohamed</td>
-            <td><span class="priority priority-low">Low</span></td>
-            <td><span class="status status-pending">Pending</span></td>
-            <td>
-                <a class="btn btn-details" href="details_task.html">Details</a>
-            </td>
-        </tr>
+        <tbody class = "teacher-tasks-container-js">
+        
         </tbody>
     </table>
 </div>
-
+<script type = "module" src="js-files/teacher_tasks.js"></script>
 </body>
 
 </html>

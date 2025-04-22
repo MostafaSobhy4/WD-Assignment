@@ -22,7 +22,7 @@
 
     <div class="navbar-right"> 
         <p id="welcome-message"></p>
-        <a href="login.html">Logout</a>
+        <a class = "logout-js" href="login.html">Logout</a>
     </div>
 
     <script>
@@ -52,86 +52,14 @@
                 <th>Complete</th>
             </tr>
             </thead>
-            <tbody>
-            <tr>
-                <td>1</td>
-                <td>
-                    Prepare lesson plan for week 5
-                    <!-- <span class="task_desc"
-                        >Lorem ipsum dolor sit amet, consectetur
-                        adipiscing elit, sed do eiusmod tempor
-                        incididunt ut labore et dolore magna
-                        aliqua.</span
-                    > -->
-                </td>
-                <td>
-                    <span class="priority priority-high">High</span>
-                </td>
-                <td>
-                                <span class="status status-pending"
-                                >Pending</span
-                                >
-                </td>
-                <td>
-                    <a class="btn btn-details" href="details_task.html">Details</a>
-                </td>
-                <td>
-                    <input style="width: 20px; margin-left: 20px; height: 20px;" type="checkbox"/>
-                </td>
-            </tr>
-            <tr>
-                <td>2</td>
-                <td>Submit student progress reports
-                    <!-- <span class="task_desc"
-                    >Lorem ipsum dolor sit amet, consectetur
-                    adipiscing elit, sed do eiusmod tempor
-                    incididunt ut labore et dolore magna
-                    aliqua.</span
-                > -->
-                </td>
-                <td>
-                                <span class="priority priority-medium"
-                                >Medium</span
-                                >
-                </td>
-                <td>
-                    <span class="status status-completed">Completed</span>
-                </td>
-                <td>
-                    <a class="btn btn-details" href="details_task.html">Details</a>
-                </td>
-                <td>
-                    <input style="width: 20px; margin-left: 20px; height: 20px;" type="checkbox"/>
-                </td>
-            </tr>
-            <tr>
-                <td>3</td>
-                <td>Prepare exam questions
-                    <!-- <span class="task_desc"
-                    >Lorem ipsum dolor sit amet, consectetur
-                    adipiscing elit, sed do eiusmod tempor
-                    incididunt ut labore et dolore magna
-                    aliqua.</span
-                > -->
-                </td>
-                <td>
-                    <span class="priority priority-low">Low</span>
-                </td>
-                <td>
-                    <span class="status status-pending">Pending</span>
-                </td>
-                <td>
-                    <a class="btn btn-details" href="details_task.html">Details</a>
-                </td>
-                <td>
-                    <input style="width: 20px; margin-left: 20px; height: 20px;" type="checkbox"/>
-                </td>
-            </tr>
+            <tbody class = "teacher-dashboard-js">
+            
             </tbody>
         </table>
-        <a class="btn complete-tasks-btn" href="completed_tasks.html">Complete The Selected Tasks</a>
+        <a class="btn complete-tasks-btn complete-tasks-btn-js" href="completed_tasks.html">Complete The Selected Tasks</a>
 
     </div>
 </div>
+<script type = "module" src="js-files/teacher-dashboard.js"></script>
 </body>
 </html>

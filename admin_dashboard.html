@@ -8,16 +8,15 @@
     <link rel="stylesheet" href="Css/styles.css">
     <link rel="stylesheet" href="Css/normalize.css">
     <link rel="stylesheet" href="Css/all.min.css">
-    <script src="script.js" defer></script>
 </head>
 <body>
     <!-- Navigation Bar -->
     <div class="navbar">
-        <a href="Home.html">
+        <a href="admin_dashboard.html">
             <i class="fa-solid fa-school"></i>
             School Task
         </a>
-        <a href="Home.html">Home</a>
+        <a href="admin_dashboard.html">Home</a>
         <a href="admin_dashboard.html">Dashboard</a>
         <a href="Add-Task.html">Add Task</a>
         <div class="navbar-right"> 
@@ -25,16 +24,8 @@
             <a href="login.html">Logout</a>
         </div>
 
-        <script>
-            const username = localStorage.getItem("username");
-
-            if (username) {
-                const welcomeMessage = document.getElementById("welcome-message");
-                welcomeMessage.textContent = `Welcome, ${username}!`;
-            } 
-            else {
-                window.location.href = "login.html";
-            }
+        <script type="module" src="js-files/admin-dashboard.js">
+            
         </script>
     </div>
     
@@ -58,40 +49,8 @@
                         <th>Actions</th>
                     </tr>
                 </thead>
-                <tbody>
-                    <tr>
-                        <td>1</td>
-                        <td>Prepare lesson plan for week 5</td>
-                        <td>Mr. Ahmed</td>
-                        <td><span class="priority priority-high">High</span></td>
-                        <td><span class="status status-pending">Pending</span></td>
-                        <td>
-                            <a href="EditTask.html" class="btn btn-edit">Edit</a>
-                            <a href="DeleteTask.html" class="btn btn-delete">Delete</a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>2</td>
-                        <td>Submit student progress reports</td>
-                        <td>Ms. Fatma</td>
-                        <td><span class="priority priority-medium">Medium</span></td>
-                        <td><span class="status status-completed">Completed</span></td>
-                        <td>
-                            <a href="EditTask.html" class="btn btn-edit">Edit</a>
-                            <a href="DeleteTask.html" class="btn btn-delete">Delete</a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>3</td>
-                        <td>Prepare exam questions</td>
-                        <td>Mr. Mohamed</td>
-                        <td><span class="priority priority-low">Low</span></td>
-                        <td><span class="status status-pending">Pending</span></td>
-                        <td>
-                            <a href="EditTask.html" class="btn btn-edit">Edit</a>
-                            <a href="DeleteTask.html" class="btn btn-delete">Delete</a>
-                        </td>
-                    </tr>
+                <tbody class = "admin-tasks-container-js">
+                    
                 </tbody>
             </table>
         </div>
