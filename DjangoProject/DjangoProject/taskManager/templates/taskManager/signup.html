@@ -1,0 +1,141 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <link rel="icon" type="jpg/png" href="{% static 'imgs/logo.png' %}" > 
+    <link rel="stylesheet" href="{% static 'Css/styles.css' %}">
+    <link rel="stylesheet" href="{% static 'Css/normalize.css' %}">
+    <link rel="stylesheet" href="{% static 'Css/all.min.css' %}">
+</head>
+<body>
+    <!-- Sign Up -->
+    <div class="navbar">
+        <div class="logo">
+            <a href="{% url 'home' %}">
+                <i class="fa-solid fa-school"></i>
+                School Task
+            </a>
+        </div>
+    </div>
+    <div class="container">
+        <div class="signup-page">
+            <div class="left">
+                <div class="signup">
+                    <h2>Sign Up</h2>
+                    <div class="social">
+                        <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                        <a href="#"><i class="fa-brands fa-google"></i></a>
+                    </div>
+                
+                    <p>or</p>
+                
+                    <form action="{% url 'signup' %}" id="signup-form" method="POST">
+                        {% csrf_token %}
+                        <label for="username">Username:</label>
+                        <input type="text" id="username" placeholder="User Name" name="username" required>
+                        <br>
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" placeholder="Email Address" name="email" required>
+                        <br>
+                        <label for="password">Password:</label>
+                        <!-- Password Field -->
+                        <div class="password-field">
+                            <input type="password" id="signup-pass" name="password" placeholder="Password" required>
+                            <i class="fa-solid fa-eye-slash" id="toggle-password"></i>
+                        </div>
+
+                        <br>
+                        <label for="confirm-pass">Confirm Password:</label>
+                        <!-- Confirm Password Field -->
+                        <div class="password-field">
+                            <input type="password" id="confirm-pass" name="confirm_password" placeholder="Confirm Password" required>
+                            <i class="fa-solid fa-eye-slash" id="toggle-confirm-password"></i>
+                        </div>
+                        <!-- Error message -->
+                        <span id="pass-msg" style="color: red;"></span>
+                        <br>
+                        <label for="role">Role:</label>
+                        <select id="role" name="role" required>
+                            <option value="admin">Admin</option>
+                            <option value="teacher">Teacher</option>
+                        </select>
+                        <br>
+                        <button type="submit">Sign Up</button>
+                    </form>
+                    <p>Already have an account? <a href="{% url 'login' %}">Login</a></p>
+                </div>
+            </div>
+    
+            <div class="right">
+                <div class="wallpeper">
+                    <img src="{% static 'imgs/wallpaper.jpg' %}" alt="">
+                </div>
+            </div>
+    
+        </div>
+    </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const togglePassword = document.getElementById("toggle-password");
+            const passwordInput = document.getElementById("signup-pass");
+
+            if (togglePassword && passwordInput) {
+                togglePassword.addEventListener("click", () => {
+                    const type = passwordInput.type === "password" ? "text" : "password";
+                    passwordInput.type = type;
+                    togglePassword.classList.toggle("fa-eye");
+                    togglePassword.classList.toggle("fa-eye-slash");
+                });
+            }
+
+            const toggleConfirm = document.getElementById("toggle-confirm-password");
+            const confirmInput = document.getElementById("confirm-pass");
+
+            if (toggleConfirm && confirmInput) {
+                toggleConfirm.addEventListener("click", () => {
+                    const type = confirmInput.type === "password" ? "text" : "password";
+                    confirmInput.type = type;
+                    toggleConfirm.classList.toggle("fa-eye");
+                    toggleConfirm.classList.toggle("fa-eye-slash");
+                });
+            }
+
+            function validatePassword(password) {
+                const minLength = 8;
+                const hasUppercase = /[A-Z]/.test(password);
+                const hasLowercase = /[a-z]/.test(password);
+                const hasNumber = /\d/.test(password);
+                const hasSpecialChar = /[!@#$%^&*(),.?":{}|<>]/.test(password);
+                const isLongEnough = password.length >= minLength;
+
+                if (!isLongEnough || !hasUppercase || !hasLowercase || !hasNumber || !hasSpecialChar)
+                    return "❌ Password must be at least 8 characters and include uppercase, lowercase, number, and special character.";
+                return "✅ Password is strong.";
+            }
+
+            const form = document.getElementById("signup-form");
+            const message = document.getElementById("pass-msg");
+
+            if (form && passwordInput && confirmInput && message) {
+                form.addEventListener("submit", function (e) {
+                    if (passwordInput.value !== confirmInput.value) {
+                        e.preventDefault();
+                        message.textContent = "❌ Passwords do not match!";
+                    } else {
+                        const result = validatePassword(passwordInput.value);
+                        if (result !== "✅ Password is strong.") {
+                            e.preventDefault();
+                            message.textContent = result;
+                        } else {
+                            message.textContent = "";
+                        }
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+</html>

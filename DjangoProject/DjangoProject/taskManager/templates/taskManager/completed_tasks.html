@@ -1,0 +1,56 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Completed Tasks | School Task Manager</title>
+    <link href="{% static 'imgs/logo.png' %}" rel="icon" type="jpg/png"/>
+    <link rel="stylesheet" href="{% static 'Css/styles.css' %}">
+    <link rel="stylesheet" href="{% static 'Css/normalize.css' %}">
+    <link rel="stylesheet" href="{% static 'Css/all.min.css' %}">
+</head>
+<body>
+
+<!-- Navigation Bar Teacher -->
+<div class="navbar">
+    <a href="{% url 'teacher_dashboard' teacher.teacher_id %}">
+        <i class="fa-solid fa-school"></i>
+        School Task
+    </a>
+    <a href="{% url 'teacher_dashboard' teacher.teacher_id %}">Home</a>
+    <a href="{% url 'teacher_dashboard' teacher.teacher_id %}">Dashboard</a>
+    <a href="{% url 'assigned_tasks' teacher.teacher_id %}">View tasks</a>
+    <a href="{% url 'completed_tasks' teacher.teacher_id %}">Completed tasks</a>
+    <a href="{% url 'teacher_tasks' teacher.teacher_id %}">Search Task</a>
+
+    <div class="navbar-right"> 
+        <p id="welcome-message"></p>
+        <a href="{% url 'login' %}">Logout</a>
+    </div>
+</div>
+
+<!-- Main Content -->
+<div class="container">
+    <h1>Completed Tasks</h1>
+    <p>Select a task to view its description.</p>
+
+    <div class="form-container-js form-container">
+        {% if completed_tasks %}
+            {% for task in completed_tasks %}
+                <div class="task-card">
+                    <h3>{{ task.taskTitle }}</h3>
+                    <p>{{ task.taskDescription }}</p>
+                    <p><strong>Priority:</strong> {{ task.taskPriority }}</p>
+                    <p><strong>Status:</strong> <span class="status completed">Completed</span></p>
+                </div>
+            {% endfor %}
+        {% else %}
+            <p>No completed tasks.</p>
+        {% endif %}
+    </div>
+</div>
+
+</body>
+</html>

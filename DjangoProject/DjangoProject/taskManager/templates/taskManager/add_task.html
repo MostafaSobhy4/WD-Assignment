@@ -1,0 +1,77 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Add New Task | School Task Manager</title>
+    <link rel="icon" type="jpg/png" href="{% static 'imgs/logo.png' %}" />
+    <link rel="stylesheet" href="{% static 'Css/styles.css' %}" />
+    <link rel="stylesheet" href="{% static 'Css/normalize.css' %}" />
+    <link rel="stylesheet" href="{% static 'Css/all.min.css' %}" />
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <div class="navbar">
+        <a href="{% url 'admin_dashboard' admin.admin_id %}">
+            <i class="fa-solid fa-school"></i>
+            School Task
+        </a>
+        <a href="{% url 'admin_dashboard' admin.admin_id %}">Home</a>
+        <a href="{% url 'admin_dashboard' admin.admin_id %}">Dashboard</a>
+        <a href="{% url 'add_task' admin.admin_id %}">Add Task</a>
+        <div class="navbar-right">
+            <p id="welcome-message"></p>
+            <a href="{% url 'login' %}">Logout</a>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="container">
+        <h1>Add New Task</h1>
+        <p>Assign a new task to a teacher</p>
+
+        <div class="form-container">
+            <form method="POST" action="{% url 'add_task' admin.admin_id %}">
+                {% csrf_token %}
+                <div class="form-group">
+                    <label for="taskTitle">Task Title</label>
+                    <input type="text" id="taskTitle" name="taskTitle" class="form-control task-title-input-js" required />
+                </div>
+
+                <div class="form-group">
+                <label for="teacherName">Teacher</label>
+                <select id="teacherName" name="teacherName" class="form-control teacher-name-input-js" required>
+                    <option value="all" selected>Select All Teachers</option>
+                    {% for teacher in teachers %}
+                        <option value="{{ teacher.teacher_id }}">{{ teacher.userName }}</option>
+                    {% endfor %}
+                </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="priority">Priority</label>
+                    <select id="priority" name="priority" class="form-control priority-input-js" required>
+                        <option value="Low">Low</option>
+                        <option value="Medium">Medium</option>
+                        <option value="High">High</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="description">Description</label>
+                    <textarea
+                        id="description"
+                        name="description"
+                        class="form-control textarea-input-js"
+                        rows="5"
+                        required
+                    ></textarea>
+                </div>
+
+                <button type="submit" class="btn btn-submit">Create Task</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

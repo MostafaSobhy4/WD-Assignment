@@ -1,0 +1,83 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Admin Dashboard | School Task Manager</title>
+    <link rel="icon" type="jpg/png" href="{% static 'imgs/logo.png' %}" />
+    <link rel="stylesheet" href="{% static 'Css/styles.css' %}" />
+    <link rel="stylesheet" href="{% static 'Css/normalize.css' %}" />
+    <link rel="stylesheet" href="{% static 'Css/all.min.css' %}" />
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <div class="navbar">
+        <a href="{% url 'admin_dashboard' admin.admin_id %}">
+            <i class="fa-solid fa-school"></i>
+            School Task
+        </a>
+        <a href="{% url 'admin_dashboard' admin.admin_id %}">Home</a>
+        <a href="{% url 'admin_dashboard' admin.admin_id %}">Dashboard</a>
+        <a href="{% url 'add_task' admin.admin_id %}">Add Task</a>
+        <div class="navbar-right">
+            <p id="welcome-message"></p>
+            <a href="{% url 'login' %}">Logout</a>
+        </div>
+
+    </div>
+
+    <!-- Main Content -->
+    <div class="container">
+        <h1>Admin Dashboard</h1>
+        <p>Manage tasks assigned to teachers</p>
+
+        <a href="{% url 'add_task' admin.admin_id %}" class="btn btn-add">+ Add New Task</a>
+
+        <div class="task-list">
+            <h2>Your Tasks</h2>
+            <table>
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Title</th>
+            <th>Teacher Name</th>
+            <th>Priority</th>
+            <th>Status</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for task in tasks %}
+        <tr>
+            <td>{{ task.task_id }}</td>
+            <td>{{ task.taskTitle }}</td>
+            <td>{{ task.teacher_id.userName }}</td>
+            <td>
+                <span class="priority priority-{{ task.taskPriority|lower }}">
+                    {{ task.taskPriority }}
+                </span>
+            </td>
+            <td>
+                <span class="status status-{% if task.isCompleted %}completed{% else %}pending{% endif %}">
+                    {% if task.isCompleted %}Completed{% else %}Pending{% endif %}
+                </span>
+            </td>
+            <td>
+                <a href="{% url 'edit_task' admin.admin_id task.task_id %}" class="btn btn-edit btn-edit-js">Edit</a>  
+                <a class="btn btn-delete"
+                href="{% url 'delete_task' task.task_id admin.admin_id %}">
+               Delete
+                </a>
+            </td>
+        </tr>
+        {% empty %}
+        <tr><td colspan="6">No tasks available</td></tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,60 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <link rel="stylesheet" href="{% static 'Css/styles.css' %}">
+    <link rel="stylesheet" href="{% static 'Css/normalize.css' %}">
+    <link rel="stylesheet" href="{% static 'Css/all.min.css' %}">
+</head>
+
+<body>
+<!-- Navigation Bar Teacher -->
+<div class="navbar">
+    <a href="{% url 'teacher_dashboard' teacher_id %}">
+        <i class="fa-solid fa-school"></i>
+        School Task
+    </a>
+    <a href="{% url 'teacher_dashboard' teacher_id %}">Home</a>
+   
+    <div class="navbar-right"> 
+        <p id="welcome-message"></p>
+        <a href="{% url 'teacher_dashboard' teacher_id %}">Logout</a>
+    </div>
+
+   
+</div>
+
+    <div class="task_details_container task-details-container-js">
+    {% if task %}
+        <div class="task-card">
+            <h2 class="task-title">{{ task.taskTitle }}</h2>
+            
+            <p><strong>Task ID:</strong> {{ task.task_id }}</p>
+
+            <p><strong>Priority:</strong>
+                <span class="priority priority-{{ task.taskPriority|lower }}">
+                    {{ task.taskPriority }}
+                </span>
+            </p>
+
+            <p><strong>Status:</strong>
+                <span class="status status-{{ task.isCompleted|yesno:"completed,pending" }}">
+                    {{ task.isCompleted|yesno:"Completed,Pending" }}
+                </span>
+            </p>
+
+            <p><strong>Description:</strong> {{ task.taskDescription|default:"No description provided." }}</p>
+        </div>
+    {% else %}
+        <div class="no-task-message">
+            <h2>No task found.</h2>
+            <p>The task you're looking for doesn't exist or is unavailable.</p>
+        </div>
+    {% endif %}
+</div>
+
+
+</body>
+</html>

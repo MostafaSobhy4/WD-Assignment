@@ -1,0 +1,95 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <link rel="stylesheet" href="{% static 'Css/styles.css' %}">
+    <link rel="stylesheet" href="{% static 'Css/normalize.css' %}">
+    <link rel="stylesheet" href="{% static 'Css/all.min.css' %}">
+</head>
+
+<body>
+<!-- Navigation Bar Teacher -->
+<div class="navbar">
+    <a href="{% url 'teacher_dashboard' teacher.teacher_id %}">
+        <i class="fa-solid fa-school"></i>
+        School Task
+    </a>
+    <a href="{% url 'teacher_dashboard' teacher.teacher_id %}">Home</a>
+    <a href="{% url 'teacher_dashboard' teacher.teacher_id %}">Dashboard</a>
+    <a href="{% url 'assigned_tasks' teacher.teacher_id %}">View tasks</a>
+    <a href="{% url 'completed_tasks' teacher.teacher_id %}">Completed tasks</a>
+    <a href="{% url 'teacher_tasks' teacher.teacher_id %}">Search Task</a>
+
+    <div class="navbar-right"> 
+        <p id="welcome-message"></p>
+        <a class="logout-js" href="{% url 'logout' 'teacher' teacher.teacher_id %}">Logout</a>
+    </div>
+</div>
+
+<div class="container" style="padding-top: 50px;">
+    <h1 style="margin: auto; width: fit-content;">Teacher Dashboard</h1>
+    <div class="task-list">
+        <table>
+            <thead>
+<tr>
+    <th>ID</th>
+    <th>Task Title</th>
+    <th>Priority</th>
+    <th>Status</th>
+    <th>Actions</th>
+    <th style="text-align: center; vertical-align: bottom; padding-bottom: 8px;">
+        <div style="display: block;">Complete</div>
+    </th>
+</tr>
+</thead>
+
+<tbody class="teacher-dashboard-js">
+{% for task in tasks %}
+<tr>
+    <td>{{ task.task_id }}</td>
+    <td>{{ task.taskTitle }}</td>
+    <td>
+        <span class="priority priority-{{ task.taskPriority|lower }}">
+            {{ task.taskPriority }}
+        </span>
+    </td>
+    <td>
+        <span 
+            class="status {% if task.isCompleted %}status-completed{% else %}status-pending{% endif %}" 
+            style="display: inline-block; width: 80px; text-align: center; white-space: nowrap;"
+        >
+            {% if task.isCompleted %}Completed{% else %}Pending{% endif %}
+        </span>
+    </td>
+    <td>
+        <a class="btn btn-details btn-details-js" data-task-id="{{ task.taskId }}" href="{% url 'task_details' teacher.teacher_id task.task_id %}">Details</a>
+    </td>
+    <td style="text-align: center; vertical-align: top; padding-top: 8px;">
+        <form method="POST" action="{% url 'toggle_task_completion' teacher.teacher_id task.task_id %}" style="margin: 0; display: inline-block;">
+            {% csrf_token %}
+            <input 
+                type="checkbox"
+                name="isCompleted"
+                onchange="this.form.submit()"
+                {% if task.isCompleted %}checked{% endif %}
+                style="width: 24px; height: 24px; cursor: pointer; margin: 0 auto; display: block;"
+            />
+        </form>
+    </td>
+</tr>
+{% empty %}
+<tr>
+    <td colspan="6">No tasks found.</td>
+</tr>
+{% endfor %}
+</tbody>
+
+
+
+        </table>
+    </div>
+</div>
+</body>
+</html>

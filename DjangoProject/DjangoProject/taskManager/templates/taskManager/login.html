@@ -1,0 +1,76 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Login</title>
+    <link rel="icon" type="jpg/png" href="{% static 'imgs/logo.png' %}" /> 
+    <link rel="stylesheet" href="{% static 'Css/styles.css' %}" />
+    <link rel="stylesheet" href="{% static 'Css/normalize.css' %}" />
+    <link rel="stylesheet" href="{% static 'Css/all.min.css' %}" />
+</head>
+<!-- Login -->
+<body>
+    <div class="navbar">
+        <div class="logo">
+            <a href="{% url 'home' %}">
+                <i class="fa-solid fa-school"></i>
+                School Task
+            </a>
+        </div>
+    </div>
+    <div class="container">
+        <div class="login-page">
+            <h2>Login</h2>
+            <form id="login-form" method="POST" action="{% url 'login' %}">
+                {% csrf_token %}
+                <label for="log-username">Username</label>
+                <input type="text" id="log-username" name="username" placeholder="User Name" value="{{ username|default:'' }}" required />
+                <br />
+                <label for="log-password">Password</label>
+                <div class="password-field">
+                    <input type="password" id="log-password" name="password" placeholder="Password" required />
+                    <i class="fa-solid fa-eye-slash" id="toggle-password"></i>
+                </div>
+
+                {% if error and request.method == "POST" %}
+                <span id="pass-msg" style="color: red;">{{ error }}</span>
+                {% else %}
+                <span id="pass-msg"></span>
+                {% endif %}
+
+                <br/>
+                <button type="submit">Login</button>
+            </form>
+            <p>You don't have an account? <a href="{% url 'signup' %}">Sign up</a></p>
+        </div>
+    </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+        const togglePassword = document.getElementById("toggle-password");
+        const passwordInput = document.getElementById("log-password");
+
+        if (togglePassword && passwordInput) {
+            togglePassword.addEventListener("click", () => {
+            const type = passwordInput.type === "password" ? "text" : "password";
+            passwordInput.type = type;
+            togglePassword.classList.toggle("fa-eye");
+            togglePassword.classList.toggle("fa-eye-slash");
+            });
+        }
+        
+        const loginForm = document.getElementById("login-form");
+        const message = document.getElementById("pass-msg");
+
+        if (loginForm) {
+            loginForm.addEventListener("submit", function (e) {
+            const username = document.getElementById("log-username").value;
+            const password = document.getElementById("log-password").value;
+            });
+        }
+        });
+
+    </script>
+</body>
+</html>
